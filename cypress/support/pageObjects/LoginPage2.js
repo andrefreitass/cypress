@@ -30,7 +30,7 @@ class LoginPage2{
 
     realizaLogout(){
         cy.wait(1000);
-        cy.get(loginElements2.botaoOpcaoSair()).click;
+        cy.get(loginElements2.botaoOpcaoSair()).click();
         cy.wait(20);
         cy.get(loginElements2.botaoSair()).click();
     }
