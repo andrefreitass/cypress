@@ -1,23 +1,39 @@
-/// <reference types="Cypress" />
+import LoginElements from '../elements/LoginElements';
+import GenericsMethod from '../generics/GenericsMethod';
 
-import LoginElements from '../elements/LoginElements'
-const loginElements = new LoginElements
-const url = Cypress.config("baseUrl")
+const loginElements = new LoginElements;
+const url = Cypress.config("baseUrl");
+const usr = Cypress.config("usuario");
+const senha = Cypress.config("senha");
 
-class LoginPage {
-    // Acessa o site que será testado
-    acessarSite() {
-        cy.visit(url)
+class LoginPage extends GenericsMethod{
+    acessarSite(){
+        cy.visit(url);
     }
 
-    // Clica no botão que acessa a página de login do site
-    clicarBotaoPaginaLogin() {
-        cy.get(loginElements.botaoLogin()).click()
+    preencheUsuario(){
+        this.preencheCampo(loginElements.campoUsuario(),usr);        
     }
-  
-    // Verifica se o botão tem o texto "Esqueceu sua senha?"
-    visualizarBotaoRecuperarSenha() {
-        cy.get(loginElements.botaoRecuperarSenha()).should('contain', 'Esqueceu sua senha?')
+
+    preencheSenha(){
+        this.preencheCampo(loginElements.campoSenha(),senha);
+    }
+
+    limparCampoUsuario(){
+        this.limparCampo(loginElements.campoUsuario());  
+    }
+
+    limparCampoSenha(){
+        this.limparCampo(loginElements.campoSenha());        
+    }
+
+    clicarBotaoEntrar(){
+        this.clicar(loginElements.botaoLogin());
+    }
+
+    realizaLogout(){
+        this.clicar(loginElements.botaoOpcaoSair());
+        this.clicar(loginElements.botaoSair());        
     }
 }
 
