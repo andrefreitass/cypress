@@ -1,0 +1,7 @@
+{
+    "viewportWidth": 1024,
+    "viewportHeight": 768,
+    "defaultCommandTimeout": 10000,
+    "baseUrl": "https://cwi.com.br/",
+    "baseUrl2": "http://tester.kpages.com.br/#/login"
+}
