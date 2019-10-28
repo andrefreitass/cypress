@@ -1,4 +1,9 @@
 {
+    "reporter": "mochawesome",
+    "reporterOptions": {
+        "mochaFile": "results/my-test-output.xml",
+        "toConsole": true
+    },
     "viewportWidth": 1024,
     "viewportHeight": 768,
     "defaultCommandTimeout": 10000,

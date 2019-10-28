@@ -12,7 +12,7 @@ class CadastroProdutoElements extends ElementsGenerics{
     quantidadeAumentar = () => {return 'span.el-input-number__increase'}
     quantidadeDiminuir = () => {return 'span.el-input-number__decrease'}
     campoPreco = () => {return ':nth-child(5) > .el-form-item__content > .el-col > .el-input > .el-input__inner'}
-    botaoCadastrar = () => {return 'button.el-button.el-button--success'}
+    botaoCadastrar = () => {return '.el-button--success'}    
     botaoVoltar = () => {return 'button.el-button.el-button--danger'}
     mensagemErroDescricao = () => {return 'p.el-message__content'}
     mensagemErroQuantidade = () => {return 'p.el-message__content'}
