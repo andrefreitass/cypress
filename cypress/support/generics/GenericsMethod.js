@@ -8,7 +8,7 @@ class GenericsMethod{
         }
 
     clicar(elemento){
-        cy.get(elemento).click();
+        cy.get(elemento).click({ multiple: true, force: true });
     }
 
     limparCampo(elemento){

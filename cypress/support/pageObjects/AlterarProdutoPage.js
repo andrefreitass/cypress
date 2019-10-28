@@ -19,7 +19,7 @@ class AlterarProdutoPage extends GenericsMethod{
         
 
     acessarTelaAlteracao(){
-        this.clicar(alteraProduto.botaoEditar());
+        this.clicar(alteraProduto.botaoEditarProduto());
         this.pontoVerificacao(alteraProduto.tituloPaginaEditarProduto(), "Editar Produto");
     }
 
@@ -28,9 +28,14 @@ class AlterarProdutoPage extends GenericsMethod{
         this.preencheCampo(alteraProduto.campoDescricao(), "Teste Automacao Edicao");        
     }
 
+    preencheCampoVazio(){
+        cy.wait(300);
+        this.limparCampo(alteraProduto.campoDescricao());        
+    }
+
     preencheCampoDescricaoIgual(){
         cy.wait(300);
-        this.preencheCampo(alteraProduto.campoDescricao(), "iPhone 6s");        
+        this.preencheCampo(alteraProduto.campoDescricao(), "iPhone 8");        
     }
 
     preencheCampoDescricaoTamanhoMaximo(){
@@ -41,6 +46,13 @@ class AlterarProdutoPage extends GenericsMethod{
     preencheCampoDescricaoTamanhoMinimo(){
         cy.wait(300);
         this.preencheCampo(alteraProduto.campoDescricao(), "t");        
+    }
+
+    quantidadeVazia(){
+        for (let index = 0; index < 104; index++) {
+            this.clicar(alteraProduto.quantidadeDiminuir());            
+        }      
+        
     }
 
     quantidadeProduto(){
